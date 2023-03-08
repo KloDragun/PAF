@@ -5,7 +5,6 @@ def unos():
         c1=0
         test=[tocka[0].replace('.','',1).replace('-','',1),tocka[1].replace('.','',1).replace('-','',1)]
         if test[0].isdigit()==True and test[1].isdigit()==True:
-            print("Da")
             c1=1
             break
         else:
