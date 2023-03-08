@@ -26,6 +26,10 @@ k=float((y2-y1)/(x2-x1))
 print(k)
 
 print("Jednadzba pravca kroz tocke {} i {} je:\n".format(tocka1,tocka2))
-print("y={}x+({})".format(k,-k*x1+y1))
+if (-k*x1+y1)>0:
+    print("y={}x+{}".format(k,-k*x1+y1))
+else:
+    print("y={}x{}".format(k,-k*x1+y1))
+
 
 
