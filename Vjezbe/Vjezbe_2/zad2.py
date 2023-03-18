@@ -13,10 +13,10 @@ kut=np.deg2rad(kut)
 #Lista sa vremenima
 dt=0.01
 T=[0]
-while T[-1]<=10:
+while T[-1]<=tmax:
     T.append(T[-1]+dt)
-if T[-1]>=10:
-    T[-1]=10
+if T[-1]>=tmax:
+    T[-1]=tmax
 
 #Lista sa pomacima po x osi
 x=[0]

@@ -11,11 +11,11 @@ tmax=10
 #Lista sa vremenima
 dt=0.01
 T=[0]
-while T[-1]<=10:
+while T[-1]<=tmax:
     T.append(T[-1]+dt)
 
-if T[-1]>=10:
-    T[-1]=10
+if T[-1]>=tmax:
+    T[-1]=tmax
 
 #Lista sa akceleracijom
 alist=[a]*len(T)
