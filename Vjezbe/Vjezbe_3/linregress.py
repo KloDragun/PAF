@@ -32,7 +32,6 @@ tos=z[0]*xos
 #Devijacija
 d=abs((1/len(x))*(((srednjay**2)/(srednjax**2))-a**2))
 d=np.sqrt(d)
-print(d)
 
 #Plottanje
 plt.plot(xos,yos)
