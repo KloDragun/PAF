@@ -1,7 +1,7 @@
 import numpy as np
 
 #Par tocaka, znamo da je aritmeticka 1.5
-tocke=np.linspace(1.4,1.6,10)
+tocke=np.linspace(3,4.11,10)
 
 #Računanje sredine
 sredina=0
@@ -13,11 +13,13 @@ sredina=sredina/len(tocke)
 #Računanje derivacije
 devijacija=0
 for i in range(len(tocke)):
-    devijacija=devijacija+(tocke[i]-sredina)**2
+    devijacija=devijacija+((tocke[i]-sredina)**2)
 
 devijacija=devijacija/(len(tocke)*(len(tocke)-1))
 
 devijacija=np.sqrt(devijacija)
-print(sredina)
-print(devijacija)
 
+
+#Printanje
+print("Srednja vrijednost je {}".format(sredina))
+print("Devijacija je {}".format(devijacija))
