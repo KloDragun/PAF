@@ -9,7 +9,6 @@ zbroj=[]
 for i in range(len(x)):
     zbroj.append(x[i]+y[i])
 
-
 #Srednja vrijednost od xy
 srednja=np.mean(zbroj)/len(zbroj)
 
@@ -22,8 +21,8 @@ srednjay=np.mean(y)
 #koeficijent
 a=srednja/(srednjax**2)
 
-
-xos=np.linspace(0,1.7,100)
+#x-y osi
+xos=np.linspace(0,1.2,100)
 yos=a*xos
 
 #Fittna f-ja (za reference)
@@ -39,6 +38,5 @@ print(d)
 plt.plot(xos,yos)
 plt.plot(xos,tos)
 plt.errorbar(x,y,d,linestyle='None', marker='')
-
 plt.scatter(x,y)
 plt.show()
