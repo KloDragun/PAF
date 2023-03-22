@@ -34,7 +34,7 @@ z=np.polyfit(x,y,deg=1)
 tos=z[0]*xos
 
 #Devijacija
-d=abs((1/len(x))*((np.mean(kvadraty)/np.mean(kvadratx))-a**2))
+d=(1/len(x))*((np.mean(kvadraty)/np.mean(kvadratx))-a**2)
 d=np.sqrt(d)
 
 #Plottanje
