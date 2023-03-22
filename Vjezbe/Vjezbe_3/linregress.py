@@ -3,23 +3,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 y=[0.052, 0.124, 0.168, 0.236, 0.284, 0.336] #M
 x=[0.1745, 0.3491, 0.5236, 0.6981, 0.8727, 1.0472] #kut
-zbroj=[]
+umn=[]
 
-#Zbroj x i y
+#Umnozak x i y
 for i in range(len(x)):
-    zbroj.append(x[i]+y[i])
+    umn.append(x[i]*y[i])
 
 #Srednja vrijednost od xy
-srednja=np.mean(zbroj)/len(zbroj)
+srednja=np.mean(umn)
 
-#Srednja vrijednost od x
-srednjax=np.mean(x)
+#Kvadrat x
+kvadratx=[]
+for i in range(len(x)):
+    kvadratx.append(x[i]*x[i])
 
-#Srednja vrijednost od y
-srednjay=np.mean(y)
+#Kvadrat y
+kvadraty=[]
+for i in range(len(y)):
+    kvadraty.append(y[i]*y[i])
 
-#koeficijent
-a=srednja/(srednjax**2)
+#Koeficijent
+a=srednja/np.mean(kvadratx)
 
 #x-y osi
 xos=np.linspace(0,1.2,100)
@@ -30,7 +34,7 @@ z=np.polyfit(x,y,deg=1)
 tos=z[0]*xos
 
 #Devijacija
-d=abs((1/len(x))*(((srednjay**2)/(srednjax**2))-a**2))
+d=abs((1/len(x))*((np.mean(kvadraty)/np.mean(kvadratx))-a**2))
 d=np.sqrt(d)
 
 #Plottanje
