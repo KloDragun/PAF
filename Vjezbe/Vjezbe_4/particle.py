@@ -12,6 +12,7 @@ class Particle:
         c.tuk=0
         c.domet=0
         c.dt=dt
+        c.andomet=0
     def reset(c):
         c.koordx=[c.koordx[0]]
         c.koordy=[c.koordy[0]]
@@ -43,8 +44,8 @@ class Particle:
     def range(c):
         c.evolve()
         c.domet=c.koordx[-1]
-        print(c.domet)
         c.tempreset()
+        return c.domet
 
     def plot_trajectory(c):
         c.evolve()
@@ -54,3 +55,9 @@ class Particle:
         plt.ylabel("y-os [m]")
         plt.show()
         c.reset()
+
+    def analiticko(c):
+        c.evolve()
+        c.andomet=c.tuk*c.brzina*np.cos(c.kut)
+        c.tempreset()
+        return c.andomet
