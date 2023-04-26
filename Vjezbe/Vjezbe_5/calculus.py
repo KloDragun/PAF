@@ -2,10 +2,6 @@ import numpy as np
 #Pocetni parametar
 h=0.01
 
-#f-ja za debug
-def funkcija(x):
-    return x**2
-
 #1. Metoda
 def derivacija(funk,tocka,ts=0):
     if ts=='y':
@@ -31,16 +27,28 @@ def pravokutna(funk,donja_granica,gornja_granica,podjele):
     tocke=np.linspace(donja_granica,gornja_granica,podjele)
     dx=tocke[1]-tocke[0]
 
-    gornja_medja=0
+    #Međe, lazy way
+    medja=0
     for i in tocke:
-        gornja_medja+=funk(i)*dx
-    gornja_medja=gornja_medja-funk(tocke[0])
+        medja+=funk(i)*dx
+    
+    gornja_medja=medja-funk(tocke[0])*dx
+    donja_medja=medja-funk(tocke[-1])*dx
 
-    donja_medja=0
-    for i in tocke:
-        donja_medja+=funk(i)*dx
-    donja_medja=donja_medja-funk(tocke[-1])
-    print(gornja_medja)
-    print(donja_medja)
+    return donja_medja,gornja_medja
 
-pravokutna(funkcija,1,4,100)
+def trapezna(funk,donja_granica,gornja_granica,podjele):
+    #Lista tocaka za integraciju+korak između točaka, kao i u pravokutnoj
+    tocke=np.linspace(donja_granica,gornja_granica,podjele)
+    dx=tocke[1]-tocke[0]
+
+    #Suma
+    suma=0
+    i=1
+    while i<(len(tocke)):
+          suma+=(funk(tocke[i-1])+funk(tocke[i]))
+          i+=1
+    
+    #Rezultat
+    trapez=(dx/2)*suma
+    return trapez
