@@ -6,11 +6,11 @@ import numpy as np
 m=1
 k=20
 
-test1=har.HarmonicOscillator(m,k,0,0.1,0.01,2)
+test1=har.HarmonicOscillator(m,k,0,0.1,0.01,10)
 test1.move()
-test2=har.HarmonicOscillator(m,k,0,0.1,0.1,2)
+test2=har.HarmonicOscillator(m,k,0,0.1,0.1,10)
 test2.move()
-test3=har.HarmonicOscillator(m,k,0,0.1,0.25,2)
+test3=har.HarmonicOscillator(m,k,0,0.1,0.25,10)
 test3.move()
 
 #Analiticki
@@ -18,7 +18,7 @@ A=np.sqrt((test1.x[0]**2)+((m/k)*((test1.v[0])**2)))
 w=np.sqrt(k/m)
 fi=np.arcsin(test1.x[0]/A)
 
-t=np.linspace(0,2,1000)
+t=np.linspace(0,10,1000)
 analiticko=[]
 for i in t:
     analiticko.append(A*np.sin(w*i+fi))
