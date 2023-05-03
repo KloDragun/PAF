@@ -34,4 +34,30 @@ class HarmonicOscillator:
         axes[1].plot(osc.t,osc.v, linewidth=2,color='blue',label='v-t graf')
         axes[2].plot(osc.t,osc.a, linewidth=2,color='green',label='a-t graf')
         plt.show()
-      
+    
+    #Period
+    def period(osc):
+        osc.move()
+        start=osc.x[1]
+        stop='a'
+        minimum=10000
+        period=0
+        indeks=1
+        for i in range(len(osc.x)):
+            if i==1:
+                pass
+            else:
+                if osc.x[i]==start:
+                    stop=osc.x[i]
+                    period=(osc.t[i]-osc.t[1])
+        if stop=='a':
+            for i in range(len(osc.x)):
+                if i==1:
+                    pass
+                else:
+                    if (abs(start-osc.x[i]))<minimum:
+                        minimum=(abs(start-osc.x[i]))
+                        period=(abs(osc.t[i]-osc.t[1]))
+                        indeks=i
+        return period,indeks
+        print(period)
