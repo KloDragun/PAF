@@ -35,29 +35,20 @@ class HarmonicOscillator:
         axes[2].plot(osc.t,osc.a, linewidth=2,color='green',label='a-t graf')
         plt.show()
     
-    #Period
+    #Period- uzimam 2* udaljenost izmedu 2 najblize tocke gdje se predznak mijenja
     def period(osc):
         osc.move()
-        start=osc.x[1]
+        start='a'
         stop='a'
-        minimum=10000
-        period=0
-        indeks=1
-        for i in range(len(osc.x)):
-            if i==1:
-                pass
+        for i in range(len(osc.x)-1):
+            if start=='a':
+                if osc.x[i]*osc.x[i+1]<0:
+                    start=i
+                    
             else:
-                if osc.x[i]==start:
-                    stop=osc.x[i]
-                    period=(osc.t[i]-osc.t[1])
-        if stop=='a':
-            for i in range(len(osc.x)):
-                if i==1:
-                    pass
-                else:
-                    if (abs(start-osc.x[i]))<minimum:
-                        minimum=(abs(start-osc.x[i]))
-                        period=(abs(osc.t[i]-osc.t[1]))
-                        indeks=i
-        return period,indeks
-        print(period)
+                if osc.x[i]*osc.x[i+1]<0:
+                    stop=i
+                    break
+
+        period=2*(osc.t[stop]-osc.t[start])
+        return period,stop

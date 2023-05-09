@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #Za lako testiranje
-m=1
-k=20
+m=3
+k=10
 
-test1=har.HarmonicOscillator(m,k,0,0.1,0.01,10)
+test1=har.HarmonicOscillator(m,k,2,3,0.01,10)
 test1.move()
-test2=har.HarmonicOscillator(m,k,0,0.1,0.1,10)
+test2=har.HarmonicOscillator(m,k,2,3,0.1,10)
 test2.move()
-test3=har.HarmonicOscillator(m,k,0,0.1,0.25,10)
+test3=har.HarmonicOscillator(m,k,2,3,0.25,10)
 test3.move()
 
 #Analiticki
