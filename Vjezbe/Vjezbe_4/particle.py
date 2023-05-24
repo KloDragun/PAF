@@ -64,7 +64,6 @@ class Particle:
         print(c.andomet)
         return c.andomet
     
-
 t1=Particle(10,60,2,0,0.01)
 
 t1.range()
