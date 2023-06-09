@@ -71,11 +71,11 @@ class Projectile:
 
     
 #Inputi za plottanje ,moze se i u drugi file pa importat projectile al pri ruci mi je
-t1=Projectile(10,20,0,0,0.001,2.3,0.6,0.05,4)
-t2=Projectile(10,20,0,0,0.1,2.3,0.6,0.05,4)
-t3=Projectile(10,20,0,0,0.2,2.3,0.6,0.05,4)
-t4=Projectile(10,20,0,0,0.01,2.3,0.6,0.05,4)
-t5=Projectile(10,20,0,0,0.01,2.3,0.6,0.05,4)
+t1=Projectile(10,20,45,0,0.001,2.3,0.6,0.05,4)
+t2=Projectile(10,20,45,0,0.1,2.3,0.6,0.05,4)
+t3=Projectile(10,20,45,0,0.2,2.3,0.6,0.05,4)
+t4=Projectile(10,20,45,0,0.01,2.3,0.6,0.05,4)
+t5=Projectile(10,20,45,0,0.01,2.3,0.6,0.05,4)
 
 t1.Plot(2)
 t2.Plot(2)
