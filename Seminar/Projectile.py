@@ -16,8 +16,6 @@ class Projectile:
         c.koordy=[y]
         c.brzinay=[v*np.sin(c.kut)]
         c.brzinax=[v*np.cos(c.kut)]
-        c.akcelx=[-1*np.sign(c.brzinax[0])*(c.ro*c.Cd*c.A/(2*c.m))*(c.brzinax[0])**2]
-        c.akcely=[-9.81-np.sign(c.brzinay[0])*(c.ro*c.Cd*c.A/(2*c.m))*(c.brzinay[0])**2]
 
         c.dt=dt
 
